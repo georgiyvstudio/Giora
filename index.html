@@ -23,9 +23,24 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <style>
-        #gioraIntro[hidden] { display: none !important; }
-    </style>
+<style>
+    #gioraIntro[hidden] {
+        display: none !important;
+    }
+
+    /* Скриваме бутоните до пълното зареждане */
+    #billboard .main-slider .slick-dots {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Показваме ги след зареждането */
+    body.giora-page-ready #billboard .main-slider .slick-dots {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.4s ease;
+    }
+</style>
 
     <script src="js/modernizr.js"></script>
 
@@ -1177,6 +1192,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-
+<script>
+window.addEventListener('load', function () {
+    document.body.classList.add('giora-page-ready');
+});
+</script>
 </body>
 </html>

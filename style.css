@@ -3333,3 +3333,12 @@ body.no-scroll { overflow: hidden; }
 @media (prefers-reduced-motion:reduce) {
   #faq *,#faq *::before,#faq *::after { animation:none !important; transition:none !important; }
 }
+@media (max-width: 767px) {
+    #services .tab-content img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
